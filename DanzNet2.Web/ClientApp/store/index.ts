@@ -5,6 +5,7 @@ import * as Counter from './Counter';
 export interface ApplicationState {
     counter: Counter.CounterState;
     weatherForecasts: WeatherForecasts.WeatherForecastsState;
+    books: 
 }
 
 // Whenever an action is dispatched, Redux will update each top-level application state property using

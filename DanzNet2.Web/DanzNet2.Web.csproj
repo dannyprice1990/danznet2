@@ -20,6 +20,26 @@
     <Content Remove="ClientApp\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="ClientApp\api\delay.ts" />
+    <None Remove="ClientApp\api\mockBookApi.ts" />
+    <None Remove="ClientApp\components\BookList.ts" />
+    <None Remove="ClientApp\reducers\reducer_books.ts" />
+    <None Remove="ClientApp\store\Books.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\api\delay.ts" />
+    <TypeScriptCompile Include="ClientApp\api\mockBookApi.ts" />
+    <TypeScriptCompile Include="ClientApp\components\BookList.ts" />
+    <TypeScriptCompile Include="ClientApp\reducers\reducer_books.ts" />
+    <TypeScriptCompile Include="ClientApp\store\Books.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\actions\" />
+  </ItemGroup>
+
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">
