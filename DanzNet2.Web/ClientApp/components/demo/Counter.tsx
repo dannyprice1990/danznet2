@@ -1,26 +1,26 @@
-﻿import * as React from 'react';
+import * as React from 'react';
 import { Link, RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { ApplicationState } from '../store';
-import * as CounterStore from '../store/Counter';
-import * as WeatherForecasts from '../store/WeatherForecasts';
+import { ApplicationState }  from '../../store';
+import * as CounterStore from '../../store/Counter';
+import * as WeatherForecasts from '../../store/WeatherForecasts';
 
 type CounterProps =
     CounterStore.CounterState
     & typeof CounterStore.actionCreators
     & RouteComponentProps<{}>;
 
-class BookList extends React.Component<CounterProps, {}> {
+class Counter extends React.Component<CounterProps, {}> {
     public render() {
         return <div>
-            <h1>Counter < /h1>
+            <h1>Counter</h1>
 
-            < p > This is a simple example of a React component.</p>
+            <p>This is a simple example of a React component.</p>
 
-                < p > Current count: <strong>{ this.props.count } < /strong></p >
+            <p>Current count: <strong>{ this.props.count }</strong></p>
 
-                    <button onClick={ () => { this.props.increment() } }>Increment < /button>
-                        < /div>;
+            <button onClick={ () => { this.props.increment() } }>Increment</button>
+        </div>;
     }
 }
 

@@ -1,107 +1,93 @@
-﻿//import delay from './delay';
+﻿import delay from './delay';
+import { BookModel } from '../components/book/models';
 
-//// This file mocks a web API by working with the hard-coded data below.
-//// It uses setTimeout to simulate the delay of an AJAX call.
-//// All calls return promises.
-//const courses: any = [
-//    {
-//        id: "react-flux-building-applications",
-//        title: "Building Applications in React and Flux",
-//        watchHref: "http://www.pluralsight.com/courses/react-flux-building-applications",
-//        authorId: "cory-house",
-//        length: "5:08",
-//        category: "JavaScript"
-//    },
-//    {
-//        id: "clean-code",
-//        title: "Clean Code: Writing Code for Humans",
-//        watchHref: "http://www.pluralsight.com/courses/writing-clean-code-humans",
-//        authorId: "cory-house",
-//        length: "3:10",
-//        category: "Software Practices"
-//    },
-//    {
-//        id: "architecture",
-//        title: "Architecting Applications for the Real World",
-//        watchHref: "http://www.pluralsight.com/courses/architecting-applications-dotnet",
-//        authorId: "cory-house",
-//        length: "2:52",
-//        category: "Software Architecture"
-//    },
-//    {
-//        id: "career-reboot-for-developer-mind",
-//        title: "Becoming an Outlier: Reprogramming the Developer Mind",
-//        watchHref: "http://www.pluralsight.com/courses/career-reboot-for-developer-mind",
-//        authorId: "cory-house",
-//        length: "2:30",
-//        category: "Career"
-//    },
-//    {
-//        id: "web-components-shadow-dom",
-//        title: "Web Component Fundamentals",
-//        watchHref: "http://www.pluralsight.com/courses/web-components-shadow-dom",
-//        authorId: "cory-house",
-//        length: "5:10",
-//        category: "HTML5"
-//    }
-//];
 
-//function replaceAll(str: string, find: string, replace: string) {
-//    return str.replace(new RegExp(find, 'g'), replace);
-//}
+// This file mocks a web API by working with the hard-coded data below.
+// It uses setTimeout to simulate the delay of an AJAX call.
+// All calls return promises.
+const books: BookModel[] = [
+    {
+        id: 1,
+        title: "Building Applications in React and Flux"
+    },
+    {
+        id: 2,
+        title: "Building Applications in React and Flux"
+    },
+    {
+        id: 3,
+        title: "Clean Code: Writing Code for Humans"
+    },
+    {
+        id: 4,
+        title: "Architecting Applications for the Real World"
+    },
+    {
+        id: 5,
+        title: "Becoming an Outlier: Reprogramming the Developer Mind"
+    },
+    {
+        id: 6,
+        title: "Web Component Fundamentals"
+    }
+];
 
-////This would be performed on the server in a real app. Just stubbing in.
-//const generateId = (course: any) => {
-//    return replaceAll(course.title, ' ', '-');
-//};
+function replaceAll(str: string, find: string, replace: string) {
+    return str.replace(new RegExp(find, 'g'), replace);
+}
 
-//class CourseApi {
-//    static getAllCourses() {
-//        return new Promise((resolve, reject) => {
-//            setTimeout(() => {
-//                resolve(Object.assign([], courses));
-//            }, delay);
-//        });
-//    }
+//This would be performed on the server in a real app. Just stubbing in.
+const generateId = (book: any) => {
+    return replaceAll(book.title, ' ', '-');
+};
 
-//    static saveCourse(course: any) {
-//        course = Object.assign({}, course); // to avoid manipulating object passed in.
-//        return new Promise((resolve, reject) => {
-//            setTimeout(() => {
-//                // Simulate server-side validation
-//                const minCourseTitleLength = 1;
-//                if (course.title.length < minCourseTitleLength) {
-//                    reject(`Title must be at least ${minCourseTitleLength} characters.`);
-//                }
+class BookApi {
+    static getAll(): Promise<BookModel[]> {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(Object.assign([], books));
+            }, delay);
+        });
+    }
 
-//                if (course.id) {
-//                    const existingCourseIndex = courses.findIndex(a => a.id == course.id);
-//                    courses.splice(existingCourseIndex, 1, course);
-//                } else {
-//                    //Just simulating creation here.
-//                    //The server would generate ids and watchHref's for new courses in a real app.
-//                    //Cloning so copy returned is passed by value rather than by reference.
-//                    course.id = generateId(course);
-//                    course.watchHref = `http://www.pluralsight.com/courses/${course.id}`;
-//                    courses.push(course);
-//                }
+    static savebook(book: any) {
+        book = Object.assign({}, book); // to avoid manipulating object passed in.
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                // Simulate server-side validation
+                const minbookTitleLength = 1;
+                if (book.title.length < minbookTitleLength) {
+                    reject(`Title must be at least ${minbookTitleLength} characters.`);
+                }
 
-//                resolve(course);
-//            }, delay);
-//        });
-//    }
+                if (book.id) {
+                    const existingbookIndex = books.findIndex(a => a.id == book.id);
+                    books.splice(existingbookIndex, 1, book);
+                } else {
+                    //Just simulating creation here.
+                    //The server would generate ids and watchHref's for new books in a real app.
+                    //Cloning so copy returned is passed by value rather than by reference.
+                    book.id = generateId(book);
+                    book.watchHref = `http://www.pluralsight.com/books/${book.id}`;
+                    books.push(book);
+                }
 
-//    static deleteCourse(courseId: number) {
-//        return new Promise((resolve, reject) => {
-//            setTimeout(() => {
-//                const indexOfCourseToDelete = courses.findIndex(course => {
-//                    course.id == courseId;
-//                });
-//                courses.splice(indexOfCourseToDelete, 1);
-//                resolve();
-//            }, delay);
-//        });
-//    }
-//}
+                resolve(book);
+            }, delay);
+        });
+    }
 
-//export default CourseApi;
+    static deletebook(bookId: number) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                const indexOfbookToDelete = books.findIndex(book => {
+                    return book.id == bookId;
+                });
+                books.splice(indexOfbookToDelete, 1);
+                resolve();
+            }, delay);
+        });
+    }
+}
+
+export default BookApi;
