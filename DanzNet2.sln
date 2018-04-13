@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2024
+VisualStudioVersion = 15.0.27004.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanzNet2.Web", "DanzNet2.Web\DanzNet2.Web.csproj", "{DD246F62-88FB-4104-9FE4-DE8366D0D4F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanzNet2", "DanzNet2\DanzNet2.csproj", "{58A082C5-B1EB-44A7-B4BA-FD41ED6CAABF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{DD246F62-88FB-4104-9FE4-DE8366D0D4F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DD246F62-88FB-4104-9FE4-DE8366D0D4F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DD246F62-88FB-4104-9FE4-DE8366D0D4F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DD246F62-88FB-4104-9FE4-DE8366D0D4F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58A082C5-B1EB-44A7-B4BA-FD41ED6CAABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58A082C5-B1EB-44A7-B4BA-FD41ED6CAABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58A082C5-B1EB-44A7-B4BA-FD41ED6CAABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58A082C5-B1EB-44A7-B4BA-FD41ED6CAABF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {23CE7FF4-64DA-4788-B4D7-6B8BB9C3EA14}
+		SolutionGuid = {F342B273-222C-49B5-943B-C60DE8A03FA4}
 	EndGlobalSection
 EndGlobal
