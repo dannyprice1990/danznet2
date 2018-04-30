@@ -9,11 +9,12 @@
 
   <ItemGroup>
     <None Remove="ClientApp\api\delay.ts" />
-    <None Remove="ClientApp\api\mockBookApi.ts" />
     <None Remove="ClientApp\components\BookForm.tsx" />
     <None Remove="ClientApp\components\BookList.tsx" />
     <None Remove="ClientApp\components\BooksContainer.tsx" />
+    <None Remove="ClientApp\components\book\BookListRow.tsx" />
     <None Remove="ClientApp\components\book\models.ts" />
+    <None Remove="ClientApp\typings\global.d.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -26,11 +27,16 @@
 
   <ItemGroup>
     <TypeScriptCompile Include="ClientApp\api\delay.ts" />
-    <TypeScriptCompile Include="ClientApp\api\mockBookApi.ts" />
     <TypeScriptCompile Include="ClientApp\components\book\BookForm.tsx" />
     <TypeScriptCompile Include="ClientApp\components\book\BookList.tsx" />
-    <TypeScriptCompile Include="ClientApp\components\book\BooksContainer.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\book\BookListRow.tsx" />
+    <TypeScriptCompile Include="ClientApp\components\book\BookContainer.tsx" />
     <TypeScriptCompile Include="ClientApp\components\book\models.ts" />
+    <TypeScriptCompile Include="ClientApp\typings\global.d.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\views\" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

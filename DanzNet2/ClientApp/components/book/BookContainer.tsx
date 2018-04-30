@@ -1,7 +1,8 @@
 ﻿import * as React from 'react';
 import { RouteComponentProps } from 'react-router';
-import bookApi from 'ClientApp/api/mockBookApi';
+import bookApi from '../../api/mockBookApi';
 import { BookModel } from '../book/models';
+import { BookList } from './BookList';
 
 interface BooksState {
     Books: BookModel[];
@@ -10,6 +11,7 @@ interface BooksState {
 export class BooksContainer extends React.Component<RouteComponentProps<{}>, BooksState> {
     constructor() {
         super();
+
         this.state = { Books: [] };
 
         this.fetchBooks();
@@ -17,20 +19,18 @@ export class BooksContainer extends React.Component<RouteComponentProps<{}>, Boo
 
     public render() {
         return <div>
-            <h1>Counter</h1>
+            <h1>Books</h1>
 
-            <p>This is a simple example of a React component.</p>
-
-          
-
-           
+            <BookList books={this.state.Books} />
         </div>;
     }
 
     fetchBooks() {
         return bookApi.getAll()
             .then(books => {
-                
+                this.setState({
+                    Books: books
+                })
             }).catch(error => {
                 throw (error);
             });
